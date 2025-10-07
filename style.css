@@ -1,4 +1,4 @@
-/* --- VARIABLES DE COLOR (NUEVA PALETA) --- */
+
 :root {
     --bg-dark: #0A192F;      /* Azul naval oscuro */
     --bg-light: #172A45;      /* Azul un poco más claro */
@@ -9,7 +9,7 @@
     --shadow-color: rgba(2, 12, 27, 0.7);
 }
 
-/* --- MEJORA: Estilos globales y detalles --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- MEJORA: Scrollbar personalizado --- */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -45,13 +45,12 @@ body {
     background: var(--text-secondary);
 }
 
-/* --- MEJORA: Color de selección de texto --- */
 ::selection {
     background-color: var(--primary-color);
     color: var(--bg-dark);
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+
 header {
     background-color: rgba(10, 25, 47, 0.85);
     backdrop-filter: blur(10px);
@@ -59,10 +58,10 @@ header {
     position: fixed;
     width: 100%;
     z-index: 100;
-    transition: top 0.3s ease-in-out; /* MEJORA: Transición para ocultar/mostrar */
+    transition: top 0.3s ease-in-out; 
 }
 
-/* MEJORA: Clase para ocultar header al hacer scroll */
+
 header.nav-up {
     top: -80px;
 }
@@ -102,7 +101,7 @@ nav {
     color: var(--primary-color);
 }
 
-/* --- MEJORA: Animación de subrayado en navegación --- */
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -138,7 +137,7 @@ main {
 section {
     padding: 8rem 0;
     border-bottom: 1px solid var(--border-color);
-    opacity: 0; /* Inicia invisible para la animación */
+    opacity: 0; 
     animation: fadeIn 0.8s ease-out forwards;
 }
 section:nth-of-type(1) { animation-delay: 0.1s; }
@@ -156,16 +155,10 @@ section:nth-of-type(4) { animation-delay: 0.4s; }
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Un poco más grande */
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    /* --- MEJORA: Gradiente sutil en el texto --- */
-    background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    
 }
 
 .hero-content .subtitle {
@@ -216,7 +209,6 @@ h2 {
     height: 250px;
     justify-self: center;
     border-radius: 50%;
-    /* --- MEJORA: Sombra con el color primario --- */
     box-shadow: 0 0 25px rgba(100, 255, 218, 0.2);
 }
 
@@ -287,7 +279,6 @@ h2 {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    /* --- MEJORA: Zoom sutil en la imagen al pasar el mouse sobre la tarjeta --- */
     transition: transform 0.4s ease;
 }
 
@@ -299,7 +290,7 @@ h2 {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Permite que el contenido crezca */
+    flex-grow: 1;
 }
 
 .card-content h3 {
@@ -313,7 +304,7 @@ h2 {
     line-height: 1.6;
     margin-bottom: 1rem;
     font-size: 0.95rem;
-    flex-grow: 1; /* Empuja los botones hacia abajo */
+    flex-grow: 1;
 }
 
 .tech-stack {
@@ -335,10 +326,10 @@ h2 {
 .project-links {
     display: flex;
     gap: 1rem;
-    margin-top: auto; /* Empuja los botones al final de la tarjeta */
+    margin-top: auto;
 }
 
-/* --- BOTONES CORREGIDOS --- */
+/* --- BOTONES --- */
 .btn {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
@@ -349,14 +340,12 @@ h2 {
     background-color: var(--primary-color);
     color: var(--bg-dark);
     border: 1px solid var(--primary-color);
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
 }
 
 .btn:hover {
     background-color: transparent;
     color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
 }
 
 .btn-secondary {
@@ -378,14 +367,42 @@ h2 {
     transform: translateY(-3px);
 }
 
+/* --- SECCIÓN DE CONTACTO --- */
 #contacto {
     text-align: center;
     border-bottom: none;
 }
 
-#contacto p {
-    margin-bottom: 2rem;
+#contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contacto .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#contacto label {
+    display: block;
+    margin-bottom: 0.5rem;
     color: var(--text-secondary);
+}
+
+#contacto input,
+#contacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+#contacto button {
+    width: 100%;
 }
 
 footer {
@@ -395,7 +412,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- ESTILOS RESPONSIVE (VERIFICADOS) --- */
+/* --- ESTILOS RESPONSIVE  --- */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
