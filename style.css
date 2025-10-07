@@ -1,7 +1,7 @@
 /* --- VARIABLES DE COLOR (NUEVA PALETA) --- */
 :root {
     --bg-dark: #0A192F;      /* Azul naval oscuro */
-    --bg-light: #172A45;     /* Azul un poco más claro */
+    --bg-light: #172A45;      /* Azul un poco más claro */
     --primary-color: #64FFDA; /* Cian/Menta vibrante */
     --text-primary: #CCD6F6;  /* Texto principal, blanco azulado */
     --text-secondary: #8892B0;/* Texto secundario, gris azulado */
@@ -9,7 +9,7 @@
     --shadow-color: rgba(2, 12, 27, 0.7);
 }
 
-/* --- ESTILOS GLOBALES Y RESET --- */
+/* --- MEJORA: Estilos globales y detalles --- */
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +26,29 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- MEJORA: Scrollbar personalizado --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* --- MEJORA: Color de selección de texto --- */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
@@ -36,7 +59,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 100;
-    transition: top 0.3s;
+    transition: top 0.3s ease-in-out; /* MEJORA: Transición para ocultar/mostrar */
+}
+
+/* MEJORA: Clase para ocultar header al hacer scroll */
+header.nav-up {
+    top: -80px;
 }
 
 nav {
@@ -59,10 +87,14 @@ nav {
     gap: 2rem;
 }
 
+.nav-links li {
+    position: relative;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-weight: 500; /* Un poco más ligero */
+    font-weight: 500;
     transition: color 0.3s;
 }
 
@@ -70,9 +102,29 @@ nav {
     color: var(--primary-color);
 }
 
+/* --- MEJORA: Animación de subrayado en navegación --- */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
 /* --- ANIMACIONES DE ENTRADA --- */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -86,15 +138,13 @@ main {
 section {
     padding: 8rem 0;
     border-bottom: 1px solid var(--border-color);
-    /* Aplicamos la animación a cada sección */
-    opacity: 0;
+    opacity: 0; /* Inicia invisible para la animación */
     animation: fadeIn 0.8s ease-out forwards;
 }
 section:nth-of-type(1) { animation-delay: 0.1s; }
 section:nth-of-type(2) { animation-delay: 0.2s; }
 section:nth-of-type(3) { animation-delay: 0.3s; }
 section:nth-of-type(4) { animation-delay: 0.4s; }
-
 
 #hero {
     min-height: 100vh;
@@ -106,10 +156,16 @@ section:nth-of-type(4) { animation-delay: 0.4s; }
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem); /* Tamaño de fuente adaptable */
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Un poco más grande */
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    /* --- MEJORA: Gradiente sutil en el texto --- */
+    background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
 }
 
 .hero-content .subtitle {
@@ -160,7 +216,8 @@ h2 {
     height: 250px;
     justify-self: center;
     border-radius: 50%;
-    border: 3px solid var(--primary-color);
+    /* --- MEJORA: Sombra con el color primario --- */
+    box-shadow: 0 0 25px rgba(100, 255, 218, 0.2);
 }
 
 .about-image img {
@@ -168,6 +225,7 @@ h2 {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--primary-color);
 }
 
 .about-text p {
@@ -195,6 +253,12 @@ h2 {
     border-radius: 4px;
     font-weight: 500;
     color: var(--text-secondary);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.skills-list li:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .project-grid {
@@ -210,6 +274,8 @@ h2 {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 10px var(--shadow-color);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -221,10 +287,19 @@ h2 {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    /* --- MEJORA: Zoom sutil en la imagen al pasar el mouse sobre la tarjeta --- */
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .card-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenido crezca */
 }
 
 .card-content h3 {
@@ -238,6 +313,7 @@ h2 {
     line-height: 1.6;
     margin-bottom: 1rem;
     font-size: 0.95rem;
+    flex-grow: 1; /* Empuja los botones hacia abajo */
 }
 
 .tech-stack {
@@ -259,6 +335,7 @@ h2 {
 .project-links {
     display: flex;
     gap: 1rem;
+    margin-top: auto; /* Empuja los botones al final de la tarjeta */
 }
 
 /* --- BOTONES CORREGIDOS --- */
@@ -268,27 +345,37 @@ h2 {
     border-radius: 4px;
     font-weight: 600;
     text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
     background-color: var(--primary-color);
     color: var(--bg-dark);
     border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
 }
 
 .btn:hover {
     background-color: transparent;
     color: var(--primary-color);
-    transform: translateY(-3px); /* Efecto de elevación sutil */
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
 }
 
 .btn-secondary {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
     background-color: transparent;
     border: 1px solid var(--text-secondary);
     color: var(--text-secondary);
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
     background-color: var(--text-secondary);
     color: var(--bg-dark);
+    border-color: var(--text-secondary);
+    transform: translateY(-3px);
 }
 
 #contacto {
@@ -311,7 +398,7 @@ footer {
 /* --- ESTILOS RESPONSIVE (VERIFICADOS) --- */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Mantenemos oculto simple, ya que no hay JS para el menú */
+        display: none;
     }
     
     main {
