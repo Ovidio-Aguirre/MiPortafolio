@@ -1,199 +1,364 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Oscar Aguirre</title>
+    <title>Oscar Aguirre - Portafolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
+    <header id="main-header">
         <nav>
-            <div class="logo">Portafolio</div>
-            <ul class="nav-links">
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <a href="#" class="logo">Portafolio<span class="dot">.</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#destacado" class="nav-link">UbiBus</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <div class="hero-content">
-                <h1>Hola, soy Oscar Aguirre</h1>
-                <p class="subtitle">Desarrollador de Software Junior</p>
-                <p class="bio">Apasionado por el desarrollo de aplicaciones full-stack para crear soluciones tecnológicas eficientes y escalables, desde aplicaciones de escritorio hasta sistemas web modernos.</p>
-                <div class="social-links">
-                    <a href="https://github.com/Ovidio-Aguirre" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/oscar-ovidio-aguirre-martinez-8158451b0/" target="_blank">LinkedIn</a>
+            <div class="hero-content reveal">
+                <div class="hero-badge reveal d-1">Desarrollador de Software Junior</div>
+                <h1 class="hero-title reveal d-2">Hola, soy <span class="gradient-text">Oscar Aguirre</span></h1>
+                <p class="hero-bio reveal d-3">Apasionado por el desarrollo de aplicaciones full-stack para crear
+                    soluciones tecnológicas eficientes y escalables, desde aplicaciones de escritorio hasta sistemas web
+                    modernos.</p>
+                <div class="hero-actions reveal d-3">
+                    <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+                    <a href="https://github.com/Ovidio-Aguirre" target="_blank" class="btn btn-outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/oscar-ovidio-aguirre-martinez-8158451b0/" target="_blank"
+                        class="btn btn-outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
 
         <section id="sobre-mi">
-            <h2>Sobre Mí y Mis Habilidades</h2>
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="img/p.png" alt="foto">
+            <h2 class="section-title reveal"><span class="gradient-text">Sobre Mí</span> y Habilidades</h2>
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal d-1">
+                    <img src="img/p.png" alt="Oscar Aguirre" class="about-image">
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Soy un desarrollador de software enfocado en la creación de aplicaciones full-stack. Mi experiencia se centra en construir sistemas completos, desde aplicaciones de escritorio con Electron hasta Progressive Web Apps (PWA) con back-ends creativos como Google Apps Script. Disfruto el reto de resolver problemas complejos y mi objetivo es siempre entregar código limpio, bien documentado y que aporte valor real.</p>
+                <div class="about-content reveal d-2">
+                    <p class="about-text">Soy un desarrollador con experiencia en la creación de aplicaciones
+                        multiplataforma. Disfruto resolviendo problemas complejos y aprendiendo continuamente sobre
+                        nuevas tecnologías. Mi objetivo es aportar valor a través de código limpio, bien documentado y
+                        funcional.</p>
+
+                    <div class="skills-container">
+                        <h3 class="skills-title">Habilidades Técnicas</h3>
+                        <div class="skills-scroll">
+                            <span class="skill-tag">JavaScript / TypeScript</span>
+                            <span class="skill-tag">Java (Spring Boot)</span>
+                            <span class="skill-tag">C# & C++ (Básico)</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Desarrollo Web (HTML5 & CSS3)</span>
+                            <span class="skill-tag">Frontend & PWA</span>
+                            <span class="skill-tag">APIs RESTful</span>
+                            <span class="skill-tag">Bases de Datos (SQL, PostgreSQL)</span>
+                            <span class="skill-tag">Git & Control de Versiones</span>
+                        </div>
                     </div>
-                    <div class="skills-list">
-                        <h3>Habilidades Técnicas</h3>
-                        <ul>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>TypeScript</li>
-                            <li>HTML5 & CSS3</li>
-                            <li>SQL (SQLite, PostgreSQL)</li>
-                            <li>Spring Boot</li>
-                            <li>Node.js</li>
-                            <li>API REST</li>
-                            <li>Angular</li>
-                            <li>Progressive Web Apps (PWA)</li>
-                            <li>Electron</li>
-                            <li>Git & GitHub</li>
-                            <li>WordPress</li>
-                            <li>Vercel</li>
-                            <li>Instalacion de SO</li>
-                            <li>Mantenimiento de computadoras</li>
-                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="destacado">
+            <h2 class="section-title reveal">Proyecto <span class="gradient-text">Estrella</span></h2>
+            <div class="featured-card reveal d-1">
+                <div class="featured-content">
+                    <div class="hero-badge"
+                        style="margin-bottom: 1rem; border-color: var(--secondary); color: var(--text-main); background: rgba(139, 92, 246, 0.2);">
+                        App Móvil & Web Local</div>
+                    <h3 class="featured-title">UbiBus El Salvador</h3>
+                    <p class="featured-desc">
+                        Mi proyecto más ambicioso e importante. UbiBus es una aplicación de movilidad diseñada para
+                        rastrear y gestionar el transporte público en El Salvador mediante geolocalización en tiempo
+                        real. Utiliza tecnología de geolocalización colaborativa (Crowdsourcing) para mostrar la
+                        posición de autobuses y microbuses en un mapa digital, permitiendo a los usuarios planificar sus
+                        viajes con datos reales.
+                        <br><br>
+                        Desarrollada como una PWA instalable y empaquetada como APK para Android, la app cuenta con
+                        características avanzadas como restricción de funcionalidad por geocercas (Geofencing) a
+                        municipios específicos, tracking en segundo plano y una experiencia de usuario orientada a la
+                        eficiencia y escalabilidad.
+                    </p>
+                    <div class="project-tech" style="margin-top: 1.5rem;">
+                        <span class="tech-tag" style="border-color: var(--secondary);">PWA & APK</span>
+                        <span class="tech-tag">Geofencing</span>
+                        <span class="tech-tag">Crowdsourcing</span>
+                        <span class="tech-tag">Background Tracking</span>
+                    </div>
+                    <a href="https://ubibus-landing.vercel.app/" target="_blank" class="btn btn-outline"
+                        style="margin-top: 2rem;">
+                        Visitar Pagina del Proyecto
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left:8px; width: 18px; height: 18px;">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <div class="featured-image-wrapper">
+                    <!-- Representación visual tipo Mockup si no hay imagen directa -->
+                    <div class="app-mockup">
+                        <div class="mockup-header"></div>
+                        <div class="mockup-body">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 50%; height: 50%; opacity: 0.8;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="proyectos">
-            <h2>Mis Proyectos</h2>
+            <h2 class="section-title reveal">Otros <span class="gradient-text">Proyectos</span></h2>
             <div class="project-grid">
 
-                <div class="project-card">
-                    <img src="img/1.PNG" alt="Captura del Sistema de Ventas PWA">
-                    <div class="card-content">
-                        <h3>Sistema de Gestión de Ventas (PWA)</h3>
-                        <p>Progressive Web App para el registro y seguimiento de ventas. Incluye un sistema de login con roles y utiliza Google Sheets como base de datos a través de un back-end serverless.</p>
-                        <div class="tech-stack">
-                            <span>PWA</span>
-                            <span>Service Worker</span>
-                            <span>Google Apps Script</span>
-                            <span>API REST</span>
+                <div class="project-card reveal d-1">
+                    <div class="project-image-container">
+                        <img src="img/1.png" alt="Sistema de Gestión de Ventas" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Gestión de Ventas</h3>
+                        <p class="project-desc">PWA para el registro y seguimiento de ventas. Login con roles y Google
+                            Sheets como backend serverless con Apps Script.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PWA</span>
+                            <span class="tech-tag">Apps Script</span>
+                            <span class="tech-tag">Vanilla JS</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ovidio-Aguirre/calculadora-sv.git" class="btn" target="_blank">Ver en GitHub</a>
+                        <div class="project-footer">
+                            <a href="https://github.com/Ovidio-Aguirre/calculadora-sv.git" target="_blank"
+                                class="project-link">
+                                Ver en GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="img/2.PNG" alt="Captura del E-commerce Myhhome">
-                    <div class="card-content">
-                        <h3>Sitio E-commerce para Myhhome</h3>
-                        <p>Implementación de una tienda en línea completa utilizando WordPress y WooCommerce, incluyendo configuración de catálogo y pasarela de pago con PayPal.</p>
-                        <div class="tech-stack">
-                            <span>WordPress</span>
-                            <span>E-commerce</span>
-                            <span>WooCommerce</span>
-                            <span>PayPal API</span>
+                <div class="project-card reveal d-2">
+                    <div class="project-image-container">
+                        <img src="img/2.png" alt="Sitio E-commerce" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce para Myhhome</h3>
+                        <p class="project-desc">Tienda en línea completa utilizando WordPress y WooCommerce, con
+                            integración de pasarela de pago PayPal.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">WooCommerce</span>
+                            <span class="tech-tag">PayPal API</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://myhhome.com/" class="btn" target="_blank">Visitar Sitio Web</a>
+                        <div class="project-footer">
+                            <a href="https://myhhome.com/" target="_blank" class="project-link">
+                                Visitar Sitio Web
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="img/3.PNG" alt="Captura del Catálogo de Videojuegos">
-                    <div class="card-content">
-                        <h3>Catálogo de Videojuegos (CRUD Avanzado)</h3>
-                        <p>App de escritorio (Electron) y web con CRUD completo, login, exportación de datos, estadísticas y diseño responsive.</p>
-                        <div class="tech-stack">
-                            <span>Electron</span>
-                            <span>Node.js</span>
-                            <span>SQLite</span>
-                            <span>IndexedDB</span>
+                <div class="project-card reveal d-3">
+                    <div class="project-image-container">
+                        <img src="img/3.png" alt="Catálogo de Videojuegos" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Catálogo de Videojuegos</h3>
+                        <p class="project-desc">App de escritorio web y multiplataforma con CRUD completo, exportación
+                            de datos y estadísticas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Electron</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">SQLite</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ovidio-Aguirre/Gestor-videojuegos-electron.git" class="btn" target="_blank">Ver en GitHub</a>
+                        <div class="project-footer">
+                            <a href="https://github.com/Ovidio-Aguirre/Gestor-videojuegos-electron.git" target="_blank"
+                                class="project-link">
+                                Ver en GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="img/4.png" alt="Captura de la Pokedex">
-                    <div class="card-content">
-                        <h3>Pokedex con API REST</h3>
-                        <p>Landing page interactiva que consume la PokeAPI para buscar y mostrar dinámicamente información y estadísticas de cualquier Pokémon.</p>
-                        <div class="tech-stack">
-                            <span>HTML5</span>
-                            <span>CSS3 (Flexbox)</span>
-                            <span>JavaScript</span>
-                            <span>API REST</span>
+                <div class="project-card reveal d-1">
+                    <div class="project-image-container">
+                        <img src="img/4.png" alt="Pokedex con API REST" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pokedex con API REST</h3>
+                        <p class="project-desc">Landing page interactiva que consume la PokeAPI para buscar y mostrar
+                            dinámicamente información de Pokémon.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API REST</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ovidio-Aguirre/Proyecto.git" class="btn" target="_blank">Ver en GitHub</a>
+                        <div class="project-footer">
+                            <a href="https://github.com/Ovidio-Aguirre/Proyecto.git" target="_blank"
+                                class="project-link">
+                                Ver en GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="img/5.PNG" alt="Captura del Sistema de Biblioteca">
-                    <div class="card-content">
-                        <h3>Sistema de Gestión de Biblioteca</h3>
-                        <p>Aplicación de consola en TypeScript para gestionar libros usando un archivo JSON como base de datos, con un diseño modular y orientado a objetos.</p>
-                        <div class="tech-stack">
-                            <span>TypeScript</span>
-                            <span>Node.js</span>
-                            <span>readline-sync</span>
+                <div class="project-card reveal d-2">
+                    <div class="project-image-container">
+                        <img src="img/5.png" alt="Sistema de Gestión de Biblioteca" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestión de Biblioteca</h3>
+                        <p class="project-desc">Aplicación de consola en TypeScript para gestionar libros usando JSON
+                            como base de datos orientada a objetos.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ovidio-Aguirre/Sistema-Gestion-Biblioteca.git" class="btn" target="_blank">Ver en GitHub</a>
+                        <div class="project-footer">
+                            <a href="https://github.com/Ovidio-Aguirre/Sistema-Gestion-Biblioteca.git" target="_blank"
+                                class="project-link">
+                                Ver en GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <img src="img/6.png" alt="Logo de Spring Boot">
-                    <div class="card-content">
-                        <h3>API REST para Gestor de Enlaces</h3>
-                        <p>Back-end construido con Java y Spring Boot que expone una API RESTful para gestionar enlaces. Implementa operaciones CRUD con Spring Data JPA y una base de datos H2.</p>
-                        <div class="tech-stack">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>Spring Data JPA</span>
-                            <span>API REST</span>
-                            <span>Maven</span>
+
+                <div class="project-card reveal d-3">
+                    <div class="project-image-container">
+                        <img src="img/6.png" alt="Mi Bolsita - App de Finanzas" class="project-image"
+                            onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22system-ui%22%20font-size%3D%2220%22%20fill%3D%22%238b5cf6%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%3EMi%20Bolsita%20(Imagen%20Pendiente)%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mi Bolsita</h3>
+                        <p class="project-desc">App full-stack (PWA) de finanzas para la economía informal. Automatiza
+                            gastos, control de deudas e inventario offline y online.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Material-UI</span>
+                            <span class="tech-tag">Firebase</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ovidio-Aguirre/API-REST-para-Gestor-de-Enlaces.git" class="btn" target="_blank">Ver en GitHub</a>
+                        <div class="project-footer">
+                            <a href="https://github.com/Ovidio-Aguirre/mi-bolsita-V1" target="_blank"
+                                class="project-link">
+                                Ver en GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    style="margin-left:8px; width: 18px; height: 18px;">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-   
+
             </div>
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Interesado en colaborar? ¡Contáctame!</p>
-            <a href="mailto:aguireo042@gmail.com" class="btn">Enviar un Correo</a>
+            <div class="contact-card reveal">
+                <div class="contact-content">
+                    <h2 class="section-title" style="margin-bottom: 2rem;">¿Listo para <span
+                            class="gradient-text">colaborar</span>?</h2>
+                    <p class="contact-text">Si tienes un proyecto en mente, o simplemente quieres saludar, no dudes en
+                        escribirme. Siempre estoy abierto a nuevas oportunidades de aprender y aportar valor.</p>
+                    <a href="mailto:aguireo042@gmail.com" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Enviar un Correo
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Oscar Aguirre</p>
+        <p>&copy; 2026 - Oscar Aguirre. Diseñado con pasión.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
 
 
 
